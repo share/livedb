@@ -16,6 +16,10 @@ list](https://groups.google.com/forum/?fromgroups#!forum/sharejs) or [read the d
 Please report any bugs you find to the [issue
 tracker](https://github.com/share/sharedb/issues).
 
+## Documentation
+
+[Chinese](https://rain120.github.io/sharedb-zh/sharedb/sharedb)
+
 ## Features
 
  - Realtime synchronization of any JSON document
