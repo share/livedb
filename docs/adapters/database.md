@@ -32,7 +32,7 @@ ShareDB ships with an in-memory, non-persistent database. This is useful for tes
 
 ### ShareDBPostgres
 
-[`sharedb-postgres`](https://github.com/share/sharedb-postgres) is backed by PostgreSQL, and has no query support.
+[`sharedb-postgres`](https://github.com/plotdb/sharedb-postgres) is backed by PostgreSQL, and has no query support.
 
 ## Usage
 
