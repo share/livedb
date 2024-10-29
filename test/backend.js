@@ -92,6 +92,23 @@ describe('Backend', function() {
           done();
         });
       });
+
+      it('deduplicates concurrent requests', function(done) {
+        var getOps = sinon.spy(backend.db, 'getOps');
+        var count = 0;
+        var callback = function(error, ops) {
+          if (error) return done(error);
+          expect(ops).to.have.length(2);
+          expect(ops[0].create.data).to.eql({title: '1984'});
+          expect(ops[1].op).to.eql([{p: ['author'], oi: 'George Orwell'}]);
+          count++;
+          expect(getOps).to.have.been.calledOnce;
+          if (count === 2) done();
+        };
+
+        backend.getOps(agent, 'books', '1984', 0, null, callback);
+        backend.getOps(agent, 'books', '1984', 0, null, callback);
+      });
     });
 
     describe('getOpsBulk', function() {
