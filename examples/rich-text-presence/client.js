@@ -1,10 +1,10 @@
-var ReconnectingWebSocket = require('reconnecting-websocket');
-var sharedb = require('sharedb/lib/client');
-var richText = require('rich-text');
-var Quill = require('quill');
-var QuillCursors = require('quill-cursors');
-var tinycolor = require('tinycolor2');
-var ObjectID = require('bson-objectid');
+import ReconnectingWebSocket from 'reconnecting-websocket';
+import sharedb from 'sharedb/lib/client';
+import richText from 'rich-text';
+import Quill from 'quill';
+import QuillCursors from 'quill-cursors';
+import tinycolor from 'tinycolor2';
+import ObjectID from 'bson-objectid';
 
 sharedb.types.register(richText.type);
 Quill.register('modules/cursors', QuillCursors);
@@ -36,9 +36,12 @@ doc.subscribe(function(err) {
 });
 
 function initialiseQuill(doc) {
-  var quill = new Quill('#editor', {
-    theme: 'bubble',
-    modules: {cursors: true}
+    var quill = new Quill('#editor', {
+    theme: 'snow',
+    modules: {
+      cursors: true,
+      toolbar: true,
+    }
   });
   var cursors = quill.getModule('cursors');
 

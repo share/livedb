@@ -4,7 +4,7 @@
   "description": "An example of presence using ShareDB and Quill",
   "main": "server.js",
   "scripts": {
-    "build": "browserify client.js -o static/dist/bundle.js",
+    "build": "webpack --mode development",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
@@ -18,7 +18,7 @@
     "@teamwork/websocket-json-stream": "^2.0.0",
     "bson-objectid": "^2.0.4",
     "express": "^4.18.2",
-    "quill": "^1.3.7",
+    "quill": "^2.0.2",
     "quill-cursors": "^4.0.2",
     "reconnecting-websocket": "^4.4.0",
     "rich-text": "^4.1.0",
@@ -27,6 +27,7 @@
     "ws": "^8.12.1"
   },
   "devDependencies": {
-    "browserify": "^17.0.0"
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   }
 }

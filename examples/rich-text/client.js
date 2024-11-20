@@ -1,7 +1,7 @@
-var ReconnectingWebSocket = require('reconnecting-websocket');
-var sharedb = require('sharedb/lib/client');
-var richText = require('rich-text');
-var Quill = require('quill');
+import ReconnectingWebSocket from 'reconnecting-websocket';
+import sharedb from 'sharedb/lib/client';
+import richText from 'rich-text';
+import Quill from 'quill';
 sharedb.types.register(richText.type);
 
 // Open WebSocket connection to ShareDB server
