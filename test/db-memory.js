@@ -69,7 +69,8 @@ describe('MemoryDB', function() {
     },
     getQuery: function(options) {
       return {filter: options.query, sort: options.sort};
-    }
+    },
+    transactions: true
   });
 
   describe('deleteOps', function() {

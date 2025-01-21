@@ -64,6 +64,10 @@ module.exports = function(options) {
       require('./client/projections')({getQuery: options.getQuery});
     }
 
+    if (options.transactions) {
+      require('./client/transaction')();
+    }
+
     require('./client/submit')();
     require('./client/submit-json1')();
     require('./client/subscribe')();
